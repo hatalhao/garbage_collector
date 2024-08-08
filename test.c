@@ -2,7 +2,9 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include <time.h>
 #include "utiles.h"
+
 // #include <stri.h>
 
 // unsigned long	get_size(void *ptr)
@@ -25,14 +27,12 @@ int main()
 	*list = 0;
 	ft_malloc (list, (void **)&arr, sizeof(int), 6);
 	printf("arr = %p\n", arr);
+	srand(time(NULL));
 	while (++i < 6)
 	{
-		arr[i] = (i + 21) * i;
-		// printf("%p == arr[%d] == %d\n", &arr[i], i, arr[i]);
+		arr[i] = rand();
+		printf("%p == arr[%d] == %d\n", &arr[i], i, arr[i]);
 	}
-	// t_node	*hold = list;
 	free_node(list, arr);
 	free (list);
-	// printf("========> %p\n", list);
-	// ft_malloc(list, &arr_str, );
 }
